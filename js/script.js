@@ -9,6 +9,39 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('.products-slider').slick({
+    speed: 500,
+    slidesToShow: 5,
+    responsive: [
+      {
+        breakpoint: 1250,
+        settings: {
+	                 slidesToShow: 4,
+                  }
+       },
+       {
+        breakpoint: 950,
+        settings: {
+	                 slidesToShow: 3,
+                  }
+       },
+       {
+        breakpoint: 640,
+        settings: {
+	                 slidesToShow: 2,
+                  }
+       },
+       {
+        breakpoint: 336,
+        settings: {
+	                 slidesToShow: 1,
+                  }
+       }
+     ]
+  });
+});
+
 
 // Меню бургер
 const btn = document.querySelector('.header-top__icon');
