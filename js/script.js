@@ -33,7 +33,7 @@ $(document).ready(function() {
                   }
        },
        {
-        breakpoint: 336,
+        breakpoint: 341,
         settings: {
 	                 slidesToShow: 1,
                   }
@@ -42,6 +42,32 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('.article__slider').slick({
+    speed: 500,
+    slidesToShow: 4,
+    responsive: [
+      {
+        breakpoint: 1171,
+        settings: {
+	        slidesToShow: 3,
+         }
+       },
+       {
+        breakpoint: 800,
+        settings: {
+	        slidesToShow: 2,
+         }
+       },
+       {
+        breakpoint: 371,
+        settings: {
+	        slidesToShow: 1,
+         }
+       }
+     ]
+  });
+});
 
 // Меню бургер
 const btn = document.querySelector('.header-top__icon');
@@ -224,28 +250,28 @@ function dynamicAdaptive() {
 }
 dynamicAdaptive() // ДИНАМИЧЕСКИЙ АДАПТИВ
 
-function scrollHeader() {
-	const header = document.querySelector('.header-top');
+// function scrollHeader() {
+// 	const header = document.querySelector('.header-top');
 
-	const catalogBtn = document.querySelector(".header-catalog__btn");
-	const catalogBody = document.querySelector(".header-catalog__inner");
-	const catalogWrapper = document.querySelector(".header-catalog__wrapper");
+// 	const catalogBtn = document.querySelector(".header-catalog__btn");
+// 	const catalogBody = document.querySelector(".header-catalog__inner");
+// 	const catalogWrapper = document.querySelector(".header-catalog__wrapper");
 
-	const callback = function (entries, observer) {
-		if (entries[0].isIntersecting) {
-			header.classList.remove('_scroll');
-		} else {
-			header.classList.add('_scroll');
+// 	const callback = function (entries, observer) {
+// 		if (entries[0].isIntersecting) {
+// 			header.classList.remove('_scroll');
+// 		} else {
+// 			header.classList.add('_scroll');
 
-			catalogBtn.classList.remove("_active");
-			catalogBody.classList.remove("_active");
-			catalogWrapper.classList.remove("_active");
-		}
-	};
+// 			catalogBtn.classList.remove("_active");
+// 			catalogBody.classList.remove("_active");
+// 			catalogWrapper.classList.remove("_active");
+// 		}
+// 	};
 
-	const headerObserver = new IntersectionObserver(callback);
-	headerObserver.observe(header);
-}
-scrollHeader()
+// 	const headerObserver = new IntersectionObserver(callback);
+// 	headerObserver.observe(header);
+// }
+// scrollHeader()
 
 /*!=====================================================================================*/
