@@ -13,7 +13,6 @@
     <div class="header-top">
       <div class="header-top__logo-wrapper">
         <button class="header-top__icon" type="button"><span></span></button>
-        <!-- <div class="header-top__icon"><span></span></div> -->
         <picture>
           <source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
           <img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
@@ -26,7 +25,7 @@
       <div class="header-top__call-box" data-da=".header-menu__list,888,6">
         <a href="tel:84950183210" class="header-top__phone">8 495 018-32-10</a>
         <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
-        <a href="" class="header-top__order-call">Заказать звонок</a>
+        <a href="#" class="header-top__order-call">Заказать звонок</a>
       </div>
       <nav class="header-menu__items">
         <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
@@ -57,9 +56,9 @@
         </form>
       </div>
       <div class="header-bottom__actions" data-da=".header-top,1300,last">
-        <button class="header-bottom__user"><img src="./img/svg/registr.svg" alt="Кнопка регистрации"></button>
-        <button class="header-bottom__user"><img src="./img/svg/like.svg" alt="Кнопка регистрации"></button>
-        <button class="header-bottom__user"><img src="./img/svg/cart.svg" alt="Кнопка регистрации"></button>
+        <button class="header-bottom__user header-bottom__user_1"><img src="./img/svg/registr.svg" alt="Кнопка регистрации"></button>
+        <button class="header-bottom__user header-bottom__user_2"><img src="./img/svg/like.svg" alt="Кнопка регистрации"></button>
+        <button class="header-bottom__user header-bottom__user_3"><img src="./img/svg/cart.svg" alt="Кнопка регистрации"></button>
       </div>
     </div>
   </header>
@@ -619,6 +618,94 @@
       </div>
     </div>
   </footer>
+
+  <div class="popup popup_type_call">
+    <div class="popup__container">
+      <button class="popup__close" type="button"><span></span></button>
+      <h2 class="popup__title">ЗАКАЗ ЗВОНКА</h2>
+      <form action="#" class="popup__form">
+        <input type="text" class="popup__input" placeholder="Ваше имя">
+        <input type="tel" class="popup__input" placeholder="Телефон">
+        <input type="text" class="popup__input" placeholder="Удобное время для звонка">
+        <button class="button__submit" type="button"> ОТПРАВИТЬ </button>
+      </form>
+      <p class="popup__text">Нажимая кнопку «Отправить», вы соглашаетесь с документом <a href="#" class="popup__text-span">политика конфиденциальности</a></p>
+    </div>
+  </div>
+
+  <div class="popup popup_type_location">
+    <div class="popup__container">
+      <button class="popup__close" type="button"><span></span></button>
+      <h2 class="popup__title">ГОРОД ИЛИ РЕГИОН</h2>
+      <form action="#" class="popup__form">
+        <div class="popup__search-cnt">
+          <input type="text" class="popup__search" placeholder="Поиск">
+          <label for="popup__search" class="popup__label"><img src="./img/svg/search.svg" alt="Поиск"></label>
+        </div>
+        <div class="popup__location popup-location">
+          <ul class="popup-location__list">
+            <li class="popup-location__item _active">Москва</li>
+            <li class="popup-location__item">Московская область</li>
+            <li class="popup-location__item">Санкт-Петербург</li>
+            <li class="popup-location__item">Астрахань</li>
+            <li class="popup-location__item">Самара</li>
+            <li class="popup-location__item">Белгород</li>
+            <li class="popup-location__item">Брянск</li>
+            <li class="popup-location__item">Владивосток</li>
+            <li class="popup-location__item">Владимир</li>
+            <li class="popup-location__item">Волгоград</li>
+            <li class="popup-location__item">Вологда</li>
+            <li class="popup-location__item">Томск</li>
+            <li class="popup-location__item">Тверь</li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_user">
+    <div class="popup__container">
+      <button class="popup__close" type="button"><span></span></button>
+      <h2 class="popup__title">ЛИЧНЫЙ КАБИНЕТ</h2>
+        <div class="popup-user__nav">
+          <button class="popup-user__select-tab _active" type="button" data-user-tab="user-tab-01">Вход</button>
+          <button class="popup-user__select-tab" type="button" data-user-tab="user-tab-02">Регистрация</button>
+        </div>
+        <div class="popup-user__tabs-list">
+          <div class="popup-user__tab-item user-tab-01 _active">
+            <form action="#" class="popup__form">
+              <input type="email" class="popup__input" placeholder="Email">
+              <input type="password" class="popup__input" placeholder="Пароль">
+              <button class="button__submit">ВОЙТИ</button>
+            </form>
+          </div>
+          <div class="popup-user__tab-item user-tab-02">
+            <form action="#" class="popup__form">
+              <input type="text" class="popup__input" placeholder="Ваше имя">
+              <input type="email" class="popup__input" placeholder="Email">
+              <input type="tel" class="popup__input" placeholder="Телефон">
+              <div class="popup__input_password"><input type="password" class="popup__input popup__input_pass" placeholder="Пароль"><img src="./img/svg/password.svg" alt="Пароль" class="password__img"></div>
+              <div class="popup__input_password"><input type="password" class="popup__input popup__input_pass" placeholder="Подтвердите пароль"><img src="./img/svg/password.svg" alt="Пароль" class="password__img"></div>
+              <button class="button__submit">РЕГИСТРАЦИЯ</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="popup popup_type_basket">
+    <div class="popup__container">
+      <button class="popup__close" type="button"><span></span></button>
+      <h2 class="popup__title">КОРЗИНА</h2>
+      <form action="#" class="popup__form">
+        <h3 class="popup__title-2">Корзина пуста</h3>
+        <p class="popup__text2">но этоникогда не поздно исправить :)</p>
+        <p class="popup__text2">ИТОГО: <span class="popup__span">0</span></p>
+        <button class="button__submit" type="button">ПЕРЕЙТИ В КОРЗИНУ</button>
+      </form>
+    </div>
+  </div>
+
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="js/slick.min.js"></script>
 	<script src="js/script.js"></script>

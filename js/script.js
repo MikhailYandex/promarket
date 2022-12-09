@@ -1,3 +1,143 @@
+const popupCall = document.querySelector('.popup_type_call');
+const popupLocation = document.querySelector('.popup_type_location');
+const popupUser = document.querySelector('.popup_type_user');
+const popupBasket = document.querySelector('.popup_type_basket');
+
+const userButton = document.querySelector('.header-bottom__user_1');
+const basketButton = document.querySelector('.header-bottom__user_3');
+const callButton = document.querySelector('.header-top__order-call');
+const callButton2 = document.querySelector('.footer-top__order-call');
+const cityButton = document.querySelector('.header-top__city');
+
+const popup = document.querySelectorAll('.popup');
+const closeButtons = document.querySelectorAll('.popup__close');
+
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
+// Закрытие попапов через все кнопки closeButtons
+if (closeButtons.length > 0) {
+  for (let i = 0; i < closeButtons.length; i++) {
+    const closeButton = closeButtons[i];
+    closeButton.addEventListener('click', () => closePopup(closeButton.closest('.popup')));
+  }
+};
+
+// Закрытие попапа по всей области страницы
+document.addEventListener('click', (e) => {
+  const popup = e.target.closest('.popup');
+  if (e.target === popup) {
+    closePopup(popup);
+  }
+});
+
+basketButton.addEventListener('click', () => openPopup(popupBasket));
+userButton.addEventListener('click', () => openPopup(popupUser));
+cityButton.addEventListener('click', () => openPopup(popupLocation));
+callButton.addEventListener('click', () => openPopup(popupCall));
+callButton2.addEventListener('click', () => openPopup(popupCall));
+
+/*!=====================================================================================*/
+
+// Меню бургер
+const btn = document.querySelector('.header-top__icon');
+const menu = document.querySelector('.header-menu__items');
+const body = document.querySelector('body');
+
+btn.addEventListener('click', () => {
+  menu.classList.toggle('active');
+	btn.classList.toggle('active');
+	body.classList.toggle('lock');
+});
+
+/*!=====================================================================================*/
+// Выбор города в попап
+function customSelect() {
+  let selectItem = document.querySelectorAll('.popup-location__item');
+
+  selectItem.forEach(item => {
+    item.addEventListener("click", function () {
+      let text = this.innerText;
+      let currentText = document.querySelector('.header-top__city');
+      currentText.innerText = text;
+
+      selectItem.forEach(item => {
+        item.classList.remove("_active");
+      });
+
+      this.classList.add("_active");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    const elementTarget = e.target;
+
+    if (elementTarget.closest(".popup-location-select__item")) {
+      document.querySelector(".popup-item").classList.remove("_active");
+      document.body.classList.remove("_lock-scroll");
+    }
+  })
+};
+customSelect();
+
+/*!=====================================================================================*/
+//Переключение табов в user popup
+function userTabs() {
+  const btnTabs = document.querySelectorAll(".popup-user__select-tab");
+  const bodyTabs = document.querySelectorAll(".popup-user__tab-item");
+  let userData;
+
+  btnTabs.forEach(btn => {
+    btn.addEventListener("click", function () {
+      userData = this.getAttribute("data-user-tab");
+
+      btnTabs.forEach(btn => {
+        btn.classList.remove("_active");
+      });
+
+      this.classList.add("_active");
+
+      function userSelect(userData) {
+        bodyTabs.forEach(item => {
+          if (item.classList.contains(userData)) {
+            item.classList.add("_active");
+          } else {
+            item.classList.remove("_active");
+          }
+        });
+      }
+      userSelect(userData)
+
+    });
+  });
+}
+userTabs()
+
+//Показать и убрать пароль в инпуте
+function showPassword() {
+  const inputImg = document.querySelector('.popup__input_password');
+  const inputPass = document.querySelector('.popup__input_pass');
+  const img = document.querySelector('.password__img');
+
+  img.addEventListener('click', () => {
+    inputImg.classList.toggle('active')
+
+    if (inputPass.getAttribute('type') === 'password') {
+      inputPass.setAttribute('type', 'text')
+    } else {
+      inputPass.setAttribute('type', 'password')
+    }
+  })
+}
+showPassword();
+
+/*!=====================================================================================*/
+
 // слайдер
 $(document).ready(function() {
   $('.main-block-slider').slick({
@@ -68,39 +208,6 @@ $(document).ready(function() {
      ]
   });
 });
-
-// Меню бургер
-const btn = document.querySelector('.header-top__icon');
-const menu = document.querySelector('.header-menu__items');
-const body = document.querySelector('body');
-
-btn.addEventListener('click', () => {
-  menu.classList.toggle('active');
-	btn.classList.toggle('active');
-	body.classList.toggle('lock');
-});
-
-// Закрытие попапа по всей области страницы
-// document.addEventListener("click", function (e) {
-//   const elementTarget = e.target;
-
-//   if (elementTarget.closest(".header-menu__list")) {
-//     menu.classList.remove("active");
-//   }
-// });
-
-
-
-// function ibg(){
-// 	$.each($('._ibg'), function(index, val) {
-// 		if($(this).find('img').length>0){
-// 			$(this).css('background-image','url("'+$(this).find('img').attr('src')+'")');
-// 			$(this).css('background-repeat', 'no-repeat');
-// 		}
-// 	});
-// }
-// ibg();
-
 
 /*!=====================================================================================*/
 
@@ -248,30 +355,6 @@ function dynamicAdaptive() {
 	da.init();
 
 }
-dynamicAdaptive() // ДИНАМИЧЕСКИЙ АДАПТИВ
-
-// function scrollHeader() {
-// 	const header = document.querySelector('.header-top');
-
-// 	const catalogBtn = document.querySelector(".header-catalog__btn");
-// 	const catalogBody = document.querySelector(".header-catalog__inner");
-// 	const catalogWrapper = document.querySelector(".header-catalog__wrapper");
-
-// 	const callback = function (entries, observer) {
-// 		if (entries[0].isIntersecting) {
-// 			header.classList.remove('_scroll');
-// 		} else {
-// 			header.classList.add('_scroll');
-
-// 			catalogBtn.classList.remove("_active");
-// 			catalogBody.classList.remove("_active");
-// 			catalogWrapper.classList.remove("_active");
-// 		}
-// 	};
-
-// 	const headerObserver = new IntersectionObserver(callback);
-// 	headerObserver.observe(header);
-// }
-// scrollHeader()
+dynamicAdaptive()
 
 /*!=====================================================================================*/
