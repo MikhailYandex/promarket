@@ -1,4 +1,3 @@
-
 const popupCall = document.querySelector('.popup_type_call');
 const popupLocation = document.querySelector('.popup_type_location');
 const popupUser = document.querySelector('.popup_type_user');
