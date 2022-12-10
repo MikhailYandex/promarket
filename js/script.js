@@ -1,3 +1,4 @@
+
 const popupCall = document.querySelector('.popup_type_call');
 const popupLocation = document.querySelector('.popup_type_location');
 const popupUser = document.querySelector('.popup_type_user');
@@ -136,6 +137,47 @@ function showPassword() {
 }
 showPassword();
 
+function showPassword2() {
+  const inputImg2 = document.querySelector('.popup__input_password2');
+  const inputPass2 = document.querySelector('.popup__input_pass2');
+  const img2 = document.querySelector('.password__img2');
+
+  img2.addEventListener('click', () => {
+    inputImg2.classList.toggle('active')
+
+    if (inputPass2.getAttribute('type') === 'password') {
+      inputPass2.setAttribute('type', 'text')
+    } else {
+      inputPass2.setAttribute('type', 'password')
+    }
+  })
+}
+showPassword2();
+/*!=====================================================================================*/
+function scrollTop() {
+	const scrollBtn = document.querySelector(".scroll-top");
+
+	if (scrollBtn) {
+		window.addEventListener("scroll", function () {
+			if (window.scrollY > 100) {
+				scrollBtn.classList.add("_active");
+			} else {
+				scrollBtn.classList.remove("_active");
+			}
+		});
+
+		scrollBtn.addEventListener("click", function () {
+			if (scrollBtn.classList.contains("_active")) {
+
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth"
+				});
+			}
+		});
+	}
+}
+scrollTop()
 /*!=====================================================================================*/
 
 // слайдер

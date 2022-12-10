@@ -62,8 +62,16 @@ body._ibg img {
 /*!=====================================================================================*/
 .header {
   background-color: #E1EEFB;
+  position: relative;
 }
-
+.header-top-wrapper {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(225, 238, 251, 0.9);
+}
 .header-top {
   max-width: 1540px;
   margin: 0 auto;
@@ -71,6 +79,9 @@ body._ibg img {
   display: flex;
   justify-content:space-between;
   align-items: center;
+  @media (max-width: 1400px){
+    padding-top: 15px;
+  }
 }
 
 .header-top__icon {
@@ -221,10 +232,15 @@ body._ibg img {
   color: #2B7BC6;
   font-weight: 500;
   border-bottom: 1px dashed #2B7BC6;
+  transition: all 0.5s ease;
   @media (max-width: 1500px){
     font-size: 16px;
     line-height: 20px;
   }
+}
+.header-top__city:hover {
+  color: #062f55;
+  border-bottom: 1px dashed #062f55;
 }
 
 .header-top__call-box {
@@ -270,6 +286,7 @@ body._ibg img {
   color: #2B7BC6;
   font-weight: 500;
   border-bottom: 1px dashed #2B7BC6;
+  transition: all 0.5s ease;
   @media (max-width: 1500px){
     font-size: 16px;
     line-height: 20px;
@@ -278,7 +295,10 @@ body._ibg img {
     margin-bottom: 50px;
   }
 }
-
+.header-top__order-call:hover {
+  color: #062f55;
+  border-bottom: 1px dashed #062f55;
+}
 .header-menu__logo {
   display: none;
   @media (max-width: 1300px){
@@ -361,11 +381,14 @@ body._ibg img {
 
 .header-bottom {
   max-width: 1540px;
-  margin: 0 auto;
+  margin: 80px auto 0px;
   padding: 0 15px 15px;
   display: flex;
   justify-content:space-between;
   align-items: center;
+  @media (max-width: 1400px){
+    margin-top: 65px;
+  }
 }
 
 .header-bottom__wrapper {
@@ -483,9 +506,6 @@ body._ibg img {
   }
 }
 
-.header-bottom__search {
-}
-
 .header-search {
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -533,7 +553,7 @@ body._ibg img {
   gap: 35px;
   background-color: #F1F8FF;
   @media (max-width: 1300px){
-    background-color: #E1EEFB;
+    background-color: rgba(225, 238, 251, 0.01);
     justify-content:space-between;
     min-height: 40px;
     width: 150px;
@@ -570,7 +590,7 @@ body._ibg img {
   max-width: 1540px;
   min-height: 380px;
   padding: 0 15px;
-  margin: 0 auto;
+  margin: -1px auto 0;
   display: grid;
   grid-template-columns: minmax(400px, 1040px) minmax(300px, 1fr);
   box-sizing: border-box;
@@ -2022,6 +2042,7 @@ body._ibg img {
 
 .popup {
   position: fixed;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2324,18 +2345,19 @@ body._ibg img {
   display: block;
 }
 
-.popup__input_password {
+.popup__input_password,.popup__input_password2 {
   position: relative;
 }
 
-.password__img {
+.password__img,.password__img2 {
   position: absolute;
   top: 15px;
   right: 0;
   width: 23px;
 }
 
-.popup__input_password:after {
+.popup__input_password:after,
+.popup__input_password2:after{
   content: "";
   position: absolute;
   width: 24px;
@@ -2348,7 +2370,8 @@ body._ibg img {
   background-color: #222;
 }
 
-.popup__input_password.active:after {
+.popup__input_password.active:after,
+.popup__input_password2.active:after {
   display: none;
 }
 
@@ -2375,3 +2398,55 @@ body._ibg img {
 }
 
 /*!=====================================================================================*/
+.scroll-top {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  z-index: 999;
+  opacity: 0;
+  transition: bottom 0.5s ease 0s, opacity 0.5s ease 0s;
+}
+.scroll-top._active {
+  bottom: 100px;
+  opacity: 1;
+}
+.scroll-top__btn {
+  /* Если меньше контейнера */
+  min-width: 50px;
+  /* Если меньше контейнера */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(87, 155, 219, 0.8);
+  text-align: center;
+}
+@media (max-width: 1570px) {
+  .scroll-top__btn {
+    min-width: calc(45px + 5 * ((100vw - 320px) / 1250));
+  }
+}
+@media (max-width: 1570px) {
+  .scroll-top__btn {
+    height: calc(45px + 5 * ((100vw - 320px) / 1250));
+  }
+}
+@media (any-hover: hover) {
+  .scroll-top__btn {
+    transition: background-color 0.2s ease 0s;
+  }
+  .scroll-top__btn:hover {
+    background-color: rgba(75, 138, 196, 0.9);
+  }
+}
+.scroll-top__icon {
+  transform: rotate(90deg);
+  /* Если меньше контейнера */
+  font-size: 16px;
+  color: #fff;
+}
+@media (max-width: 1570px) {
+  .scroll-top__icon {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 1250));
+  }
+}

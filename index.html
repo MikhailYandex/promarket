@@ -10,33 +10,35 @@
 </head>
 <body class="page">
   <header class="header">
-    <div class="header-top">
-      <div class="header-top__logo-wrapper">
-        <button class="header-top__icon" type="button"><span></span></button>
-        <picture>
-          <source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
-          <img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
-        </picture>
+    <div  class="header-top-wrapper">
+      <div class="header-top">
+        <div class="header-top__logo-wrapper">
+          <button class="header-top__icon" type="button"><span></span></button>
+          <picture>
+            <source srcset="./img/logo-mobile.svg" media="(max-width: 420px)">
+            <img src="./img/logo.svg" alt="Логотип" class="header-top__logo">
+          </picture>
+        </div>
+        <div class="header-top__location" data-da=".header-menu__list,1080,5">
+          <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
+          <a href="#" class="header-top__city">Москва</a>
+        </div>
+        <div class="header-top__call-box" data-da=".header-menu__list,888,6">
+          <a href="tel:84950183210" class="header-top__phone">8 495 018-32-10</a>
+          <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
+          <a href="#" class="header-top__order-call">Заказать звонок</a>
+        </div>
+        <nav class="header-menu__items">
+          <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
+          <ul class="header-menu__list">
+            <li><a href="#" class="header-menu__link">Оплата</a></li>
+            <li><a href="#" class="header-menu__link">Доставка</a></li>
+            <li><a href="#" class="header-menu__link">Поставщикам</a></li>
+            <li><a href="#" class="header-menu__link">Статьи</a></li>
+            <li><a href="#" class="header-menu__link">Контакты</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="header-top__location" data-da=".header-menu__list,1080,5">
-        <img src="./img/svg/moscow.svg" alt="Значок локации" class="header-top__location-img">
-        <a href="#" class="header-top__city">Москва</a>
-      </div>
-      <div class="header-top__call-box" data-da=".header-menu__list,888,6">
-        <a href="tel:84950183210" class="header-top__phone">8 495 018-32-10</a>
-        <img src="./img/svg/recall.svg" alt="Значок для телефона" class="header-top__call-img">
-        <a href="#" class="header-top__order-call">Заказать звонок</a>
-      </div>
-      <nav class="header-menu__items">
-        <img src="./img/logo.svg" alt="Логотип" class="header-menu__logo">
-        <ul class="header-menu__list">
-          <li><a href="#" class="header-menu__link">Оплата</a></li>
-          <li><a href="#" class="header-menu__link">Доставка</a></li>
-          <li><a href="#" class="header-menu__link">Поставщикам</a></li>
-          <li><a href="#" class="header-menu__link">Статьи</a></li>
-          <li><a href="#" class="header-menu__link">Контакты</a></li>
-        </ul>
-      </nav>
     </div>
     <div class="header-bottom">
       <div class="header-bottom__wrapper">
@@ -685,7 +687,7 @@
               <input type="email" class="popup__input" placeholder="Email">
               <input type="tel" class="popup__input" placeholder="Телефон">
               <div class="popup__input_password"><input type="password" class="popup__input popup__input_pass" placeholder="Пароль"><img src="./img/svg/password.svg" alt="Пароль" class="password__img"></div>
-              <div class="popup__input_password"><input type="password" class="popup__input popup__input_pass" placeholder="Подтвердите пароль"><img src="./img/svg/password.svg" alt="Пароль" class="password__img"></div>
+              <div class="popup__input_password2"><input type="password" class="popup__input popup__input_pass2" placeholder="Подтвердите пароль"><img src="./img/svg/password.svg" alt="Пароль" class="password__img2"></div>
               <button class="button__submit">РЕГИСТРАЦИЯ</button>
             </form>
           </div>
@@ -699,7 +701,7 @@
       <h2 class="popup__title">КОРЗИНА</h2>
       <form action="#" class="popup__form">
         <h3 class="popup__title-2">Корзина пуста</h3>
-        <p class="popup__text2">но этоникогда не поздно исправить :)</p>
+        <p class="popup__text2">но это никогда не поздно исправить :)</p>
         <p class="popup__text2">ИТОГО: <span class="popup__span">0</span></p>
         <button class="button__submit" type="button">ПЕРЕЙТИ В КОРЗИНУ</button>
       </form>
