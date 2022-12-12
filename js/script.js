@@ -65,7 +65,7 @@ function customSelect() {
       let text = this.innerText;
       let currentText = document.querySelector('.header-top__city');
       currentText.innerText = text;
-      closePopup(popupLocation);
+      closePopup(popupLocation)
       selectItem.forEach(item => {
         item.classList.remove("_active");
       });
