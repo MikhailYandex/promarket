@@ -6,7 +6,7 @@
 
 <img width="1503" alt="HowToLearn" src="https://user-images.githubusercontent.com/114576286/220314875-fb0e1705-2103-4ea3-b588-0bbe0ca49f68.png">
 
-### Используемые технологии
+### Используемые технологии:
 * HTML5;
 * CSS3;
 * Javascript;
